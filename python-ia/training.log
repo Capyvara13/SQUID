@@ -1,0 +1,866 @@
+2025-11-07 16:33:04,168 - INFO - ================================================================================
+2025-11-07 16:33:04,169 - INFO - SQUID Model Training
+2025-11-07 16:33:04,170 - INFO - ================================================================================
+2025-11-07 16:33:04,170 - INFO - Using device: cpu
+2025-11-07 16:33:04,172 - INFO - Set random seed to 42
+2025-11-07 16:33:04,172 - INFO - Generating 10000 synthetic training samples...
+2025-11-07 16:33:04,271 - INFO - Generated 10000 samples
+2025-11-07 16:33:04,271 - INFO - Label distribution: [5133 3908  959]
+2025-11-07 16:33:04,275 - INFO - Dataset split: train=7000, val=1500, test=1500
+2025-11-07 16:33:04,277 - INFO - Model architecture: SquidMLP(
+  (network): Sequential(
+    (0): Linear(in_features=13, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.1, inplace=False)
+    (3): Linear(in_features=128, out_features=64, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.1, inplace=False)
+    (6): Linear(in_features=64, out_features=4, bias=True)
+  )
+)
+2025-11-07 16:33:04,277 - INFO - Total parameters: 10308
+2025-11-07 16:38:23,708 - INFO - ================================================================================
+2025-11-07 16:38:23,708 - INFO - SQUID Model Training
+2025-11-07 16:38:23,708 - INFO - ================================================================================
+2025-11-07 16:38:23,708 - INFO - Using device: cpu
+2025-11-07 16:38:23,710 - INFO - Set random seed to 42
+2025-11-07 16:38:23,711 - INFO - Generating 10000 synthetic training samples...
+2025-11-07 16:38:23,808 - INFO - Generated 10000 samples
+2025-11-07 16:38:23,808 - INFO - Label distribution: [5133 3908  959]
+2025-11-07 16:38:23,811 - INFO - Dataset split: train=7000, val=1500, test=1500
+2025-11-07 16:38:23,812 - INFO - Model architecture: SquidMLP(
+  (network): Sequential(
+    (0): Linear(in_features=13, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.1, inplace=False)
+    (3): Linear(in_features=128, out_features=64, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.1, inplace=False)
+    (6): Linear(in_features=64, out_features=4, bias=True)
+  )
+)
+2025-11-07 16:38:23,813 - INFO - Total parameters: 10308
+2025-11-07 16:38:24,790 - INFO - 
+Starting training...
+2025-11-07 16:38:33,264 - INFO - Epoch [1/100] (8.5s) | Train Loss: 1.5386, Acc: 0.2036 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:38:33,269 - INFO - Saved best model to models\best_model.pth
+2025-11-07 16:38:41,968 - INFO - Epoch [2/100] (8.7s) | Train Loss: 1.3382, Acc: 0.4059 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:38:49,978 - INFO - Epoch [3/100] (8.0s) | Train Loss: 1.2359, Acc: 0.5076 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:38:58,116 - INFO - Epoch [4/100] (8.1s) | Train Loss: 1.2282, Acc: 0.5153 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:39:06,152 - INFO - Epoch [5/100] (8.0s) | Train Loss: 1.2269, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:39:14,221 - INFO - Epoch [6/100] (8.1s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:43:54,785 - INFO - ================================================================================
+2025-11-07 16:43:54,785 - INFO - SQUID Model Training
+2025-11-07 16:43:54,785 - INFO - ================================================================================
+2025-11-07 16:43:54,896 - INFO - Set random seed to 42
+2025-11-07 16:43:54,896 - INFO - Generating 10000 synthetic training samples...
+2025-11-07 16:43:54,986 - INFO - Generated 10000 samples
+2025-11-07 16:43:54,986 - INFO - Label distribution: [5133 3908  959]
+2025-11-07 16:43:54,998 - INFO - Dataset split: train=7000, val=1500, test=1500
+2025-11-07 16:43:55,231 - INFO - Model architecture: SquidMLP(
+  (network): Sequential(
+    (0): Linear(in_features=13, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.1, inplace=False)
+    (3): Linear(in_features=128, out_features=64, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.1, inplace=False)
+    (6): Linear(in_features=64, out_features=4, bias=True)
+  )
+)
+2025-11-07 16:43:55,231 - INFO - Total parameters: 10308
+2025-11-07 16:43:56,421 - INFO - 
+Starting training...
+2025-11-07 16:44:59,488 - INFO - Epoch [1/100] (63.1s) | Train Loss: 1.5363, Acc: 0.2064 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:44:59,495 - INFO - Saved best model to models\best_model.pth
+2025-11-07 16:45:17,226 - INFO - Epoch [2/100] (17.7s) | Train Loss: 1.3398, Acc: 0.4036 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:45:34,849 - INFO - Epoch [3/100] (17.6s) | Train Loss: 1.2394, Acc: 0.5050 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:45:51,710 - INFO - Epoch [4/100] (16.9s) | Train Loss: 1.2283, Acc: 0.5150 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:46:08,533 - INFO - Epoch [5/100] (16.8s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:46:24,972 - INFO - Epoch [6/100] (16.4s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:46:40,986 - INFO - Epoch [7/100] (16.0s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:46:57,154 - INFO - Epoch [8/100] (16.2s) | Train Loss: 1.2283, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:47:13,614 - INFO - Epoch [9/100] (16.5s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:47:29,938 - INFO - Epoch [10/100] (16.3s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:47:46,687 - INFO - Epoch [11/100] (16.7s) | Train Loss: 1.2264, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:48:02,968 - INFO - Epoch [12/100] (16.3s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:48:19,072 - INFO - Epoch [13/100] (16.1s) | Train Loss: 1.2267, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:48:36,549 - INFO - Epoch [14/100] (17.5s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:48:54,646 - INFO - Epoch [15/100] (18.1s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:49:17,344 - INFO - Epoch [16/100] (22.7s) | Train Loss: 1.2267, Acc: 0.5161 | Val Loss: 1.2271, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:49:17,345 - INFO - Early stopping triggered after 16 epochs
+2025-11-07 16:49:17,346 - INFO - 
+Training completed in 320.9s
+2025-11-07 16:49:17,358 - INFO - 
+Evaluating on test set...
+2025-11-07 16:49:24,831 - INFO - ================================================================================
+2025-11-07 16:49:24,832 - INFO - Final Test Results
+2025-11-07 16:49:24,833 - INFO - ================================================================================
+2025-11-07 16:49:24,833 - INFO - Test Loss: 1.2497
+2025-11-07 16:49:24,833 - INFO - Test Accuracy: 0.4947
+2025-11-07 16:49:24,834 - INFO - Test Precision: 0.2447
+2025-11-07 16:49:24,834 - INFO - Test Recall: 0.4947
+2025-11-07 16:49:24,834 - INFO - Test F1 Score: 0.3274
+2025-11-07 16:49:24,834 - INFO - 
+Confusion Matrix:
+[[742   0   0]
+ [607   0   0]
+ [151   0   0]]
+2025-11-07 16:49:24,840 - INFO - 
+Saved final model to models\squid_model.pth
+2025-11-07 16:49:24,842 - INFO - Saved metadata to models\training_metadata.json
+2025-11-07 16:49:24,842 - INFO - 
+Training complete!
+2025-11-07 16:55:26,758 - INFO - ================================================================================
+2025-11-07 16:55:26,758 - INFO - SQUID Model Training
+2025-11-07 16:55:26,759 - INFO - ================================================================================
+2025-11-07 16:55:26,761 - INFO - Set random seed to 42
+2025-11-07 16:55:26,909 - INFO - Using DirectML device via torch_directml
+2025-11-07 16:55:26,910 - INFO - Selected backend: directml, device: privateuseone:0
+2025-11-07 16:55:26,911 - INFO - Auto-adjusted batch_size -> 256, num_workers -> 0 for DirectML
+2025-11-07 16:55:26,911 - INFO - Generating 10000 synthetic training samples...
+2025-11-07 16:55:27,002 - INFO - Generated 10000 samples
+2025-11-07 16:55:27,002 - INFO - Label distribution: [5133 3908  959]
+2025-11-07 16:55:27,005 - INFO - Dataset split: train=7000, val=1500, test=1500
+2025-11-07 16:55:27,008 - INFO - Model architecture: SquidMLP(
+  (network): Sequential(
+    (0): Linear(in_features=13, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.1, inplace=False)
+    (3): Linear(in_features=128, out_features=64, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.1, inplace=False)
+    (6): Linear(in_features=64, out_features=4, bias=True)
+  )
+)
+2025-11-07 16:55:27,008 - INFO - Total parameters: 10308
+2025-11-07 16:55:27,742 - INFO - 
+Starting training...
+2025-11-07 16:55:28,287 - INFO - Epoch [1/100] (0.5s) | Train Loss: 1.5865, Acc: 0.1566 | Val Loss: 1.7437, Acc: 0.0000, F1: 0.0000
+2025-11-07 16:55:28,293 - INFO - Saved best model to models\best_model.pth
+2025-11-07 16:55:28,490 - INFO - Epoch [2/100] (0.2s) | Train Loss: 1.5640, Acc: 0.1783 | Val Loss: 1.7437, Acc: 0.0000, F1: 0.0000
+2025-11-07 16:55:28,689 - INFO - Epoch [3/100] (0.2s) | Train Loss: 1.5207, Acc: 0.2234 | Val Loss: 1.7437, Acc: 0.0000, F1: 0.0000
+2025-11-07 16:55:28,888 - INFO - Epoch [4/100] (0.2s) | Train Loss: 1.4606, Acc: 0.2800 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:28,893 - INFO - Saved best model to models\best_model.pth
+2025-11-07 16:55:29,094 - INFO - Epoch [5/100] (0.2s) | Train Loss: 1.4108, Acc: 0.3327 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:29,298 - INFO - Epoch [6/100] (0.2s) | Train Loss: 1.3479, Acc: 0.3951 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:29,513 - INFO - Epoch [7/100] (0.2s) | Train Loss: 1.3020, Acc: 0.4419 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:29,715 - INFO - Epoch [8/100] (0.2s) | Train Loss: 1.2666, Acc: 0.4784 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:29,919 - INFO - Epoch [9/100] (0.2s) | Train Loss: 1.2466, Acc: 0.4973 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:30,125 - INFO - Epoch [10/100] (0.2s) | Train Loss: 1.2388, Acc: 0.5083 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:30,328 - INFO - Epoch [11/100] (0.2s) | Train Loss: 1.2331, Acc: 0.5106 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:30,526 - INFO - Epoch [12/100] (0.2s) | Train Loss: 1.2285, Acc: 0.5153 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:30,725 - INFO - Epoch [13/100] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:30,930 - INFO - Epoch [14/100] (0.2s) | Train Loss: 1.2290, Acc: 0.5159 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:31,134 - INFO - Epoch [15/100] (0.2s) | Train Loss: 1.2294, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:31,370 - INFO - Epoch [16/100] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:31,613 - INFO - Epoch [17/100] (0.2s) | Train Loss: 1.2280, Acc: 0.5163 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:31,827 - INFO - Epoch [18/100] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:32,033 - INFO - Epoch [19/100] (0.2s) | Train Loss: 1.2286, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:55:32,033 - INFO - Early stopping triggered after 19 epochs
+2025-11-07 16:55:32,034 - INFO - 
+Training completed in 4.3s
+2025-11-07 16:55:32,036 - INFO - 
+Evaluating on test set...
+2025-11-07 16:55:32,052 - INFO - ================================================================================
+2025-11-07 16:55:32,052 - INFO - Final Test Results
+2025-11-07 16:55:32,053 - INFO - ================================================================================
+2025-11-07 16:55:32,053 - INFO - Test Loss: 1.2489
+2025-11-07 16:55:32,053 - INFO - Test Accuracy: 0.4947
+2025-11-07 16:55:32,054 - INFO - Test Precision: 0.2447
+2025-11-07 16:55:32,054 - INFO - Test Recall: 0.4947
+2025-11-07 16:55:32,054 - INFO - Test F1 Score: 0.3274
+2025-11-07 16:55:32,055 - INFO - 
+Confusion Matrix:
+[[742   0   0]
+ [607   0   0]
+ [151   0   0]]
+2025-11-07 16:55:32,057 - INFO - 
+Saved final model to models\squid_model.pth
+2025-11-07 16:55:32,058 - INFO - Saved metadata to models\training_metadata.json
+2025-11-07 16:55:32,058 - INFO - 
+Training complete!
+2025-11-07 16:59:15,185 - INFO - ================================================================================
+2025-11-07 16:59:15,185 - INFO - SQUID Model Training
+2025-11-07 16:59:15,187 - INFO - ================================================================================
+2025-11-07 16:59:15,190 - INFO - Set random seed to 42
+2025-11-07 16:59:15,334 - INFO - Using DirectML device via torch_directml
+2025-11-07 16:59:15,334 - INFO - Selected backend: directml, device: privateuseone:0
+2025-11-07 16:59:15,336 - INFO - Auto-adjusted batch_size -> 256, num_workers -> 0 for DirectML
+2025-11-07 16:59:15,336 - INFO - Generating 10000 synthetic training samples...
+2025-11-07 16:59:15,427 - INFO - Generated 10000 samples
+2025-11-07 16:59:15,428 - INFO - Label distribution: [5133 3908  959]
+2025-11-07 16:59:15,431 - INFO - Dataset split: train=7000, val=1500, test=1500
+2025-11-07 16:59:15,434 - INFO - Model architecture: SquidMLP(
+  (network): Sequential(
+    (0): Linear(in_features=13, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.1, inplace=False)
+    (3): Linear(in_features=128, out_features=64, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.1, inplace=False)
+    (6): Linear(in_features=64, out_features=4, bias=True)
+  )
+)
+2025-11-07 16:59:15,434 - INFO - Total parameters: 10308
+2025-11-07 16:59:16,117 - INFO - 
+Starting training...
+2025-11-07 16:59:16,354 - INFO - Epoch [1/1000] (0.2s) | Train Loss: 1.5865, Acc: 0.1566 | Val Loss: 1.7437, Acc: 0.0000, F1: 0.0000
+2025-11-07 16:59:16,361 - INFO - Saved best model to models\best_model.pth
+2025-11-07 16:59:16,566 - INFO - Epoch [2/1000] (0.2s) | Train Loss: 1.5640, Acc: 0.1783 | Val Loss: 1.7437, Acc: 0.0000, F1: 0.0000
+2025-11-07 16:59:16,774 - INFO - Epoch [3/1000] (0.2s) | Train Loss: 1.5207, Acc: 0.2234 | Val Loss: 1.7437, Acc: 0.0000, F1: 0.0000
+2025-11-07 16:59:16,978 - INFO - Epoch [4/1000] (0.2s) | Train Loss: 1.4606, Acc: 0.2800 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:16,983 - INFO - Saved best model to models\best_model.pth
+2025-11-07 16:59:17,197 - INFO - Epoch [5/1000] (0.2s) | Train Loss: 1.4108, Acc: 0.3327 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:17,397 - INFO - Epoch [6/1000] (0.2s) | Train Loss: 1.3479, Acc: 0.3951 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:17,595 - INFO - Epoch [7/1000] (0.2s) | Train Loss: 1.3020, Acc: 0.4419 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:17,797 - INFO - Epoch [8/1000] (0.2s) | Train Loss: 1.2666, Acc: 0.4784 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:17,993 - INFO - Epoch [9/1000] (0.2s) | Train Loss: 1.2466, Acc: 0.4973 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:18,189 - INFO - Epoch [10/1000] (0.2s) | Train Loss: 1.2388, Acc: 0.5083 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:18,388 - INFO - Epoch [11/1000] (0.2s) | Train Loss: 1.2331, Acc: 0.5106 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:18,583 - INFO - Epoch [12/1000] (0.2s) | Train Loss: 1.2285, Acc: 0.5153 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:18,779 - INFO - Epoch [13/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:18,998 - INFO - Epoch [14/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5159 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:19,195 - INFO - Epoch [15/1000] (0.2s) | Train Loss: 1.2294, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:19,388 - INFO - Epoch [16/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:19,582 - INFO - Epoch [17/1000] (0.2s) | Train Loss: 1.2280, Acc: 0.5163 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:19,778 - INFO - Epoch [18/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:19,984 - INFO - Epoch [19/1000] (0.2s) | Train Loss: 1.2286, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 16:59:19,984 - INFO - Early stopping triggered after 19 epochs
+2025-11-07 16:59:19,986 - INFO - 
+Training completed in 3.9s
+2025-11-07 16:59:19,987 - INFO - 
+Evaluating on test set...
+2025-11-07 16:59:20,004 - INFO - ================================================================================
+2025-11-07 16:59:20,005 - INFO - Final Test Results
+2025-11-07 16:59:20,005 - INFO - ================================================================================
+2025-11-07 16:59:20,006 - INFO - Test Loss: 1.2489
+2025-11-07 16:59:20,006 - INFO - Test Accuracy: 0.4947
+2025-11-07 16:59:20,007 - INFO - Test Precision: 0.2447
+2025-11-07 16:59:20,007 - INFO - Test Recall: 0.4947
+2025-11-07 16:59:20,007 - INFO - Test F1 Score: 0.3274
+2025-11-07 16:59:20,008 - INFO - 
+Confusion Matrix:
+[[742   0   0]
+ [607   0   0]
+ [151   0   0]]
+2025-11-07 16:59:20,010 - INFO - 
+Saved final model to models\squid_model.pth
+2025-11-07 16:59:20,011 - INFO - Saved metadata to models\training_metadata.json
+2025-11-07 16:59:20,011 - INFO - 
+Training complete!
+2025-11-07 17:00:59,797 - INFO - ================================================================================
+2025-11-07 17:00:59,797 - INFO - SQUID Model Training
+2025-11-07 17:00:59,799 - INFO - ================================================================================
+2025-11-07 17:00:59,801 - INFO - Set random seed to 42
+2025-11-07 17:00:59,902 - INFO - Using DirectML device via torch_directml
+2025-11-07 17:00:59,902 - INFO - Selected backend: directml, device: privateuseone:0
+2025-11-07 17:00:59,905 - INFO - Auto-adjusted batch_size -> 256, num_workers -> 0 for DirectML
+2025-11-07 17:00:59,905 - INFO - Generating 10000 synthetic training samples...
+2025-11-07 17:00:59,995 - INFO - Generated 10000 samples
+2025-11-07 17:00:59,995 - INFO - Label distribution: [5133 3908  959]
+2025-11-07 17:00:59,999 - INFO - Dataset split: train=7000, val=1500, test=1500
+2025-11-07 17:01:00,002 - INFO - Model architecture: SquidMLP(
+  (network): Sequential(
+    (0): Linear(in_features=13, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.1, inplace=False)
+    (3): Linear(in_features=128, out_features=64, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.1, inplace=False)
+    (6): Linear(in_features=64, out_features=4, bias=True)
+  )
+)
+2025-11-07 17:01:00,002 - INFO - Total parameters: 10308
+2025-11-07 17:01:00,693 - INFO - 
+Starting training...
+2025-11-07 17:01:00,941 - INFO - Epoch [1/1000] (0.2s) | Train Loss: 1.5865, Acc: 0.1566 | Val Loss: 1.7437, Acc: 0.0000, F1: 0.0000
+2025-11-07 17:01:00,947 - INFO - Saved best model to models\best_model.pth
+2025-11-07 17:01:01,154 - INFO - Epoch [2/1000] (0.2s) | Train Loss: 1.5640, Acc: 0.1783 | Val Loss: 1.7437, Acc: 0.0000, F1: 0.0000
+2025-11-07 17:01:01,361 - INFO - Epoch [3/1000] (0.2s) | Train Loss: 1.5207, Acc: 0.2234 | Val Loss: 1.7437, Acc: 0.0000, F1: 0.0000
+2025-11-07 17:01:01,564 - INFO - Epoch [4/1000] (0.2s) | Train Loss: 1.4606, Acc: 0.2800 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:01,570 - INFO - Saved best model to models\best_model.pth
+2025-11-07 17:01:01,777 - INFO - Epoch [5/1000] (0.2s) | Train Loss: 1.4108, Acc: 0.3327 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:01,976 - INFO - Epoch [6/1000] (0.2s) | Train Loss: 1.3479, Acc: 0.3951 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:02,186 - INFO - Epoch [7/1000] (0.2s) | Train Loss: 1.3020, Acc: 0.4419 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:02,382 - INFO - Epoch [8/1000] (0.2s) | Train Loss: 1.2666, Acc: 0.4784 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:02,592 - INFO - Epoch [9/1000] (0.2s) | Train Loss: 1.2466, Acc: 0.4973 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:02,878 - INFO - Epoch [10/1000] (0.3s) | Train Loss: 1.2388, Acc: 0.5083 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:03,079 - INFO - Epoch [11/1000] (0.2s) | Train Loss: 1.2331, Acc: 0.5106 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:03,268 - INFO - Epoch [12/1000] (0.2s) | Train Loss: 1.2285, Acc: 0.5153 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:03,466 - INFO - Epoch [13/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:03,656 - INFO - Epoch [14/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5159 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:03,856 - INFO - Epoch [15/1000] (0.2s) | Train Loss: 1.2294, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:04,053 - INFO - Epoch [16/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:04,261 - INFO - Epoch [17/1000] (0.2s) | Train Loss: 1.2280, Acc: 0.5163 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:04,469 - INFO - Epoch [18/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:04,671 - INFO - Epoch [19/1000] (0.2s) | Train Loss: 1.2286, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:04,879 - INFO - Epoch [20/1000] (0.2s) | Train Loss: 1.2278, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:05,083 - INFO - Epoch [21/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5159 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:05,284 - INFO - Epoch [22/1000] (0.2s) | Train Loss: 1.2291, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:05,494 - INFO - Epoch [23/1000] (0.2s) | Train Loss: 1.2283, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:05,691 - INFO - Epoch [24/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:05,881 - INFO - Epoch [25/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:06,089 - INFO - Epoch [26/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:06,292 - INFO - Epoch [27/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:06,497 - INFO - Epoch [28/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:06,701 - INFO - Epoch [29/1000] (0.2s) | Train Loss: 1.2264, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:06,905 - INFO - Epoch [30/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5159 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:07,112 - INFO - Epoch [31/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5159 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:07,309 - INFO - Epoch [32/1000] (0.2s) | Train Loss: 1.2281, Acc: 0.5151 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:07,520 - INFO - Epoch [33/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5159 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:07,726 - INFO - Epoch [34/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:07,936 - INFO - Epoch [35/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:08,136 - INFO - Epoch [36/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:08,346 - INFO - Epoch [37/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:08,562 - INFO - Epoch [38/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:08,787 - INFO - Epoch [39/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:08,998 - INFO - Epoch [40/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:09,193 - INFO - Epoch [41/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:09,383 - INFO - Epoch [42/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:09,599 - INFO - Epoch [43/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:09,802 - INFO - Epoch [44/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:10,008 - INFO - Epoch [45/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:10,229 - INFO - Epoch [46/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:10,430 - INFO - Epoch [47/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:10,627 - INFO - Epoch [48/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:10,831 - INFO - Epoch [49/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:11,041 - INFO - Epoch [50/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:11,245 - INFO - Epoch [51/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:11,441 - INFO - Epoch [52/1000] (0.2s) | Train Loss: 1.2244, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:11,646 - INFO - Epoch [53/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:11,837 - INFO - Epoch [54/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:12,042 - INFO - Epoch [55/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:12,246 - INFO - Epoch [56/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:12,450 - INFO - Epoch [57/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:12,669 - INFO - Epoch [58/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:12,942 - INFO - Epoch [59/1000] (0.3s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:13,148 - INFO - Epoch [60/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:13,351 - INFO - Epoch [61/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:13,543 - INFO - Epoch [62/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:13,743 - INFO - Epoch [63/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:13,942 - INFO - Epoch [64/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:14,146 - INFO - Epoch [65/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:14,358 - INFO - Epoch [66/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:14,557 - INFO - Epoch [67/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:14,760 - INFO - Epoch [68/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:14,966 - INFO - Epoch [69/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:15,197 - INFO - Epoch [70/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:15,412 - INFO - Epoch [71/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:15,623 - INFO - Epoch [72/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:15,824 - INFO - Epoch [73/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:16,031 - INFO - Epoch [74/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:16,242 - INFO - Epoch [75/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:16,442 - INFO - Epoch [76/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:16,647 - INFO - Epoch [77/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:16,858 - INFO - Epoch [78/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:17,064 - INFO - Epoch [79/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:17,276 - INFO - Epoch [80/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:17,483 - INFO - Epoch [81/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:17,678 - INFO - Epoch [82/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:17,874 - INFO - Epoch [83/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:18,082 - INFO - Epoch [84/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:18,286 - INFO - Epoch [85/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:18,483 - INFO - Epoch [86/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:18,690 - INFO - Epoch [87/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:18,900 - INFO - Epoch [88/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:19,097 - INFO - Epoch [89/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:19,281 - INFO - Epoch [90/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:19,488 - INFO - Epoch [91/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:19,672 - INFO - Epoch [92/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:19,872 - INFO - Epoch [93/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:20,070 - INFO - Epoch [94/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:20,272 - INFO - Epoch [95/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:20,469 - INFO - Epoch [96/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:20,673 - INFO - Epoch [97/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:20,882 - INFO - Epoch [98/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:21,084 - INFO - Epoch [99/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:21,274 - INFO - Epoch [100/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:21,462 - INFO - Epoch [101/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:21,648 - INFO - Epoch [102/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:21,832 - INFO - Epoch [103/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:22,020 - INFO - Epoch [104/1000] (0.2s) | Train Loss: 1.2244, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:22,214 - INFO - Epoch [105/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:22,414 - INFO - Epoch [106/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:22,622 - INFO - Epoch [107/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:22,902 - INFO - Epoch [108/1000] (0.3s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:23,116 - INFO - Epoch [109/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:23,306 - INFO - Epoch [110/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:23,503 - INFO - Epoch [111/1000] (0.2s) | Train Loss: 1.2298, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:23,697 - INFO - Epoch [112/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:23,894 - INFO - Epoch [113/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:24,095 - INFO - Epoch [114/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:24,286 - INFO - Epoch [115/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:24,481 - INFO - Epoch [116/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:24,679 - INFO - Epoch [117/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:24,873 - INFO - Epoch [118/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:25,077 - INFO - Epoch [119/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:25,274 - INFO - Epoch [120/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:25,476 - INFO - Epoch [121/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:25,655 - INFO - Epoch [122/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:25,857 - INFO - Epoch [123/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:26,060 - INFO - Epoch [124/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:26,257 - INFO - Epoch [125/1000] (0.2s) | Train Loss: 1.2300, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:26,460 - INFO - Epoch [126/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:26,678 - INFO - Epoch [127/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:26,875 - INFO - Epoch [128/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:27,077 - INFO - Epoch [129/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:27,281 - INFO - Epoch [130/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:27,489 - INFO - Epoch [131/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:27,715 - INFO - Epoch [132/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:27,942 - INFO - Epoch [133/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:28,175 - INFO - Epoch [134/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:28,408 - INFO - Epoch [135/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:28,636 - INFO - Epoch [136/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:28,834 - INFO - Epoch [137/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:29,036 - INFO - Epoch [138/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:29,241 - INFO - Epoch [139/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:29,438 - INFO - Epoch [140/1000] (0.2s) | Train Loss: 1.2247, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:29,626 - INFO - Epoch [141/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:29,830 - INFO - Epoch [142/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:30,033 - INFO - Epoch [143/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:30,235 - INFO - Epoch [144/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:30,443 - INFO - Epoch [145/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:30,645 - INFO - Epoch [146/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:30,848 - INFO - Epoch [147/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:31,052 - INFO - Epoch [148/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:31,264 - INFO - Epoch [149/1000] (0.2s) | Train Loss: 1.2306, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:31,457 - INFO - Epoch [150/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:31,661 - INFO - Epoch [151/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:31,854 - INFO - Epoch [152/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:32,051 - INFO - Epoch [153/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:32,244 - INFO - Epoch [154/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:32,434 - INFO - Epoch [155/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:32,636 - INFO - Epoch [156/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:32,916 - INFO - Epoch [157/1000] (0.3s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:33,108 - INFO - Epoch [158/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:33,297 - INFO - Epoch [159/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:33,506 - INFO - Epoch [160/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:33,698 - INFO - Epoch [161/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:33,901 - INFO - Epoch [162/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:34,109 - INFO - Epoch [163/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:34,307 - INFO - Epoch [164/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:34,502 - INFO - Epoch [165/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:34,701 - INFO - Epoch [166/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:34,916 - INFO - Epoch [167/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:35,125 - INFO - Epoch [168/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:35,345 - INFO - Epoch [169/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:35,596 - INFO - Epoch [170/1000] (0.3s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:35,794 - INFO - Epoch [171/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:36,007 - INFO - Epoch [172/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:36,204 - INFO - Epoch [173/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:36,394 - INFO - Epoch [174/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:36,600 - INFO - Epoch [175/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:36,797 - INFO - Epoch [176/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:36,987 - INFO - Epoch [177/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:37,172 - INFO - Epoch [178/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:37,362 - INFO - Epoch [179/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:37,565 - INFO - Epoch [180/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:37,767 - INFO - Epoch [181/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:37,967 - INFO - Epoch [182/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:38,163 - INFO - Epoch [183/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:38,370 - INFO - Epoch [184/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:38,569 - INFO - Epoch [185/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:38,768 - INFO - Epoch [186/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:38,966 - INFO - Epoch [187/1000] (0.2s) | Train Loss: 1.2308, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:39,163 - INFO - Epoch [188/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:39,369 - INFO - Epoch [189/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:39,568 - INFO - Epoch [190/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:39,769 - INFO - Epoch [191/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:39,969 - INFO - Epoch [192/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:40,175 - INFO - Epoch [193/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:40,371 - INFO - Epoch [194/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:40,604 - INFO - Epoch [195/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:40,806 - INFO - Epoch [196/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:41,012 - INFO - Epoch [197/1000] (0.2s) | Train Loss: 1.2298, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:41,212 - INFO - Epoch [198/1000] (0.2s) | Train Loss: 1.2244, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:41,418 - INFO - Epoch [199/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:41,623 - INFO - Epoch [200/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:41,824 - INFO - Epoch [201/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:42,031 - INFO - Epoch [202/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:42,232 - INFO - Epoch [203/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:42,433 - INFO - Epoch [204/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:42,635 - INFO - Epoch [205/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:42,917 - INFO - Epoch [206/1000] (0.3s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:43,120 - INFO - Epoch [207/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:43,324 - INFO - Epoch [208/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:43,523 - INFO - Epoch [209/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:43,708 - INFO - Epoch [210/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:43,927 - INFO - Epoch [211/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:44,119 - INFO - Epoch [212/1000] (0.2s) | Train Loss: 1.2250, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:44,332 - INFO - Epoch [213/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:44,546 - INFO - Epoch [214/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:44,749 - INFO - Epoch [215/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:44,950 - INFO - Epoch [216/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:45,168 - INFO - Epoch [217/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:45,397 - INFO - Epoch [218/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:45,599 - INFO - Epoch [219/1000] (0.2s) | Train Loss: 1.2300, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:45,808 - INFO - Epoch [220/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:45,996 - INFO - Epoch [221/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:46,195 - INFO - Epoch [222/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:46,386 - INFO - Epoch [223/1000] (0.2s) | Train Loss: 1.2306, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:46,592 - INFO - Epoch [224/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:46,786 - INFO - Epoch [225/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:46,974 - INFO - Epoch [226/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:47,167 - INFO - Epoch [227/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:47,361 - INFO - Epoch [228/1000] (0.2s) | Train Loss: 1.2308, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:47,576 - INFO - Epoch [229/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:47,762 - INFO - Epoch [230/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:47,967 - INFO - Epoch [231/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:48,155 - INFO - Epoch [232/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:48,355 - INFO - Epoch [233/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:48,536 - INFO - Epoch [234/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:48,735 - INFO - Epoch [235/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:48,942 - INFO - Epoch [236/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:49,227 - INFO - Epoch [237/1000] (0.3s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:49,420 - INFO - Epoch [238/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:49,608 - INFO - Epoch [239/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:49,811 - INFO - Epoch [240/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:50,012 - INFO - Epoch [241/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:50,216 - INFO - Epoch [242/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:50,438 - INFO - Epoch [243/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:50,723 - INFO - Epoch [244/1000] (0.3s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:50,984 - INFO - Epoch [245/1000] (0.3s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:51,255 - INFO - Epoch [246/1000] (0.3s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:51,524 - INFO - Epoch [247/1000] (0.3s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:51,763 - INFO - Epoch [248/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:51,988 - INFO - Epoch [249/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:52,203 - INFO - Epoch [250/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:52,417 - INFO - Epoch [251/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:52,626 - INFO - Epoch [252/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:52,930 - INFO - Epoch [253/1000] (0.3s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:53,163 - INFO - Epoch [254/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:53,385 - INFO - Epoch [255/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:53,595 - INFO - Epoch [256/1000] (0.2s) | Train Loss: 1.2300, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:53,833 - INFO - Epoch [257/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:54,052 - INFO - Epoch [258/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:54,280 - INFO - Epoch [259/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:54,495 - INFO - Epoch [260/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:54,708 - INFO - Epoch [261/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:54,921 - INFO - Epoch [262/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:55,133 - INFO - Epoch [263/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:55,344 - INFO - Epoch [264/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:55,546 - INFO - Epoch [265/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:55,757 - INFO - Epoch [266/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:55,974 - INFO - Epoch [267/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:56,192 - INFO - Epoch [268/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:56,411 - INFO - Epoch [269/1000] (0.2s) | Train Loss: 1.2311, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:56,629 - INFO - Epoch [270/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:56,835 - INFO - Epoch [271/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:57,048 - INFO - Epoch [272/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:57,265 - INFO - Epoch [273/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:57,474 - INFO - Epoch [274/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:57,683 - INFO - Epoch [275/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:57,879 - INFO - Epoch [276/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:58,091 - INFO - Epoch [277/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:58,309 - INFO - Epoch [278/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:58,523 - INFO - Epoch [279/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:58,779 - INFO - Epoch [280/1000] (0.3s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:58,987 - INFO - Epoch [281/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:59,199 - INFO - Epoch [282/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:59,413 - INFO - Epoch [283/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:59,637 - INFO - Epoch [284/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:01:59,844 - INFO - Epoch [285/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:00,067 - INFO - Epoch [286/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:00,298 - INFO - Epoch [287/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:00,518 - INFO - Epoch [288/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:00,736 - INFO - Epoch [289/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:00,959 - INFO - Epoch [290/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:01,178 - INFO - Epoch [291/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:01,402 - INFO - Epoch [292/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:01,615 - INFO - Epoch [293/1000] (0.2s) | Train Loss: 1.2247, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:01,826 - INFO - Epoch [294/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:02,039 - INFO - Epoch [295/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:02,259 - INFO - Epoch [296/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:02,488 - INFO - Epoch [297/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:02,701 - INFO - Epoch [298/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:03,042 - INFO - Epoch [299/1000] (0.3s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:03,249 - INFO - Epoch [300/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:03,476 - INFO - Epoch [301/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:03,693 - INFO - Epoch [302/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:03,900 - INFO - Epoch [303/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:04,120 - INFO - Epoch [304/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:04,335 - INFO - Epoch [305/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:04,562 - INFO - Epoch [306/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:04,760 - INFO - Epoch [307/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:04,974 - INFO - Epoch [308/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:05,190 - INFO - Epoch [309/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:05,396 - INFO - Epoch [310/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:05,619 - INFO - Epoch [311/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:05,839 - INFO - Epoch [312/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:06,052 - INFO - Epoch [313/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:06,269 - INFO - Epoch [314/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:06,470 - INFO - Epoch [315/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:06,698 - INFO - Epoch [316/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:06,917 - INFO - Epoch [317/1000] (0.2s) | Train Loss: 1.2250, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:07,140 - INFO - Epoch [318/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:07,382 - INFO - Epoch [319/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:07,606 - INFO - Epoch [320/1000] (0.2s) | Train Loss: 1.2251, Acc: 0.5160 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:07,820 - INFO - Epoch [321/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:08,035 - INFO - Epoch [322/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:08,254 - INFO - Epoch [323/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:08,466 - INFO - Epoch [324/1000] (0.2s) | Train Loss: 1.2300, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:08,696 - INFO - Epoch [325/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:08,916 - INFO - Epoch [326/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:09,142 - INFO - Epoch [327/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:09,359 - INFO - Epoch [328/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:09,576 - INFO - Epoch [329/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:09,788 - INFO - Epoch [330/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:09,994 - INFO - Epoch [331/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:10,214 - INFO - Epoch [332/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:10,438 - INFO - Epoch [333/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:10,696 - INFO - Epoch [334/1000] (0.3s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:10,912 - INFO - Epoch [335/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:11,122 - INFO - Epoch [336/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:11,327 - INFO - Epoch [337/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:11,538 - INFO - Epoch [338/1000] (0.2s) | Train Loss: 1.2303, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:11,745 - INFO - Epoch [339/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:11,955 - INFO - Epoch [340/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:12,165 - INFO - Epoch [341/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:12,370 - INFO - Epoch [342/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:12,565 - INFO - Epoch [343/1000] (0.2s) | Train Loss: 1.2250, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:12,840 - INFO - Epoch [344/1000] (0.3s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:13,071 - INFO - Epoch [345/1000] (0.2s) | Train Loss: 1.2303, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:13,282 - INFO - Epoch [346/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:13,512 - INFO - Epoch [347/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:13,771 - INFO - Epoch [348/1000] (0.3s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:13,999 - INFO - Epoch [349/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:14,203 - INFO - Epoch [350/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:14,426 - INFO - Epoch [351/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:14,670 - INFO - Epoch [352/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:14,910 - INFO - Epoch [353/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:15,149 - INFO - Epoch [354/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:15,376 - INFO - Epoch [355/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:15,597 - INFO - Epoch [356/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:15,814 - INFO - Epoch [357/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:16,034 - INFO - Epoch [358/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:16,264 - INFO - Epoch [359/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:16,462 - INFO - Epoch [360/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:16,670 - INFO - Epoch [361/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:16,854 - INFO - Epoch [362/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:17,072 - INFO - Epoch [363/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:17,310 - INFO - Epoch [364/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:17,524 - INFO - Epoch [365/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:17,717 - INFO - Epoch [366/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:17,909 - INFO - Epoch [367/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:18,101 - INFO - Epoch [368/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:18,291 - INFO - Epoch [369/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:18,488 - INFO - Epoch [370/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:18,691 - INFO - Epoch [371/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:18,886 - INFO - Epoch [372/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:19,090 - INFO - Epoch [373/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:19,298 - INFO - Epoch [374/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:19,493 - INFO - Epoch [375/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:19,696 - INFO - Epoch [376/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:19,880 - INFO - Epoch [377/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:20,084 - INFO - Epoch [378/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:20,282 - INFO - Epoch [379/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:20,489 - INFO - Epoch [380/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:20,682 - INFO - Epoch [381/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:20,876 - INFO - Epoch [382/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:21,075 - INFO - Epoch [383/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:21,275 - INFO - Epoch [384/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:21,465 - INFO - Epoch [385/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:21,661 - INFO - Epoch [386/1000] (0.2s) | Train Loss: 1.2250, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:21,858 - INFO - Epoch [387/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:22,061 - INFO - Epoch [388/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:22,251 - INFO - Epoch [389/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:22,454 - INFO - Epoch [390/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:22,648 - INFO - Epoch [391/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:22,930 - INFO - Epoch [392/1000] (0.3s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:23,132 - INFO - Epoch [393/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:23,348 - INFO - Epoch [394/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:23,538 - INFO - Epoch [395/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:23,727 - INFO - Epoch [396/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:23,916 - INFO - Epoch [397/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:24,115 - INFO - Epoch [398/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:24,314 - INFO - Epoch [399/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:24,511 - INFO - Epoch [400/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:24,707 - INFO - Epoch [401/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:24,908 - INFO - Epoch [402/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:25,102 - INFO - Epoch [403/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:25,286 - INFO - Epoch [404/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:25,492 - INFO - Epoch [405/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:25,701 - INFO - Epoch [406/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:25,884 - INFO - Epoch [407/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:26,080 - INFO - Epoch [408/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:26,274 - INFO - Epoch [409/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:26,478 - INFO - Epoch [410/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:26,680 - INFO - Epoch [411/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:26,899 - INFO - Epoch [412/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:27,137 - INFO - Epoch [413/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:27,420 - INFO - Epoch [414/1000] (0.3s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:27,677 - INFO - Epoch [415/1000] (0.3s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:27,925 - INFO - Epoch [416/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:28,144 - INFO - Epoch [417/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:28,366 - INFO - Epoch [418/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:28,585 - INFO - Epoch [419/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:28,823 - INFO - Epoch [420/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:29,057 - INFO - Epoch [421/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:29,291 - INFO - Epoch [422/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:29,544 - INFO - Epoch [423/1000] (0.3s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:29,775 - INFO - Epoch [424/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:30,004 - INFO - Epoch [425/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:30,225 - INFO - Epoch [426/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:30,433 - INFO - Epoch [427/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:30,635 - INFO - Epoch [428/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:30,839 - INFO - Epoch [429/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:31,046 - INFO - Epoch [430/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:31,267 - INFO - Epoch [431/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:31,476 - INFO - Epoch [432/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:31,745 - INFO - Epoch [433/1000] (0.3s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:31,965 - INFO - Epoch [434/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:32,173 - INFO - Epoch [435/1000] (0.2s) | Train Loss: 1.2247, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:32,386 - INFO - Epoch [436/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:32,609 - INFO - Epoch [437/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:32,888 - INFO - Epoch [438/1000] (0.3s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:33,104 - INFO - Epoch [439/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:33,299 - INFO - Epoch [440/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:33,512 - INFO - Epoch [441/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:33,734 - INFO - Epoch [442/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:33,942 - INFO - Epoch [443/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:34,146 - INFO - Epoch [444/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:34,348 - INFO - Epoch [445/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:34,549 - INFO - Epoch [446/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:34,754 - INFO - Epoch [447/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:34,957 - INFO - Epoch [448/1000] (0.2s) | Train Loss: 1.2250, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:35,165 - INFO - Epoch [449/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:35,375 - INFO - Epoch [450/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:35,589 - INFO - Epoch [451/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:35,797 - INFO - Epoch [452/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:36,040 - INFO - Epoch [453/1000] (0.2s) | Train Loss: 1.2306, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:36,249 - INFO - Epoch [454/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:36,451 - INFO - Epoch [455/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:36,666 - INFO - Epoch [456/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:36,867 - INFO - Epoch [457/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:37,067 - INFO - Epoch [458/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:37,269 - INFO - Epoch [459/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:37,470 - INFO - Epoch [460/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:37,672 - INFO - Epoch [461/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:37,874 - INFO - Epoch [462/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:38,090 - INFO - Epoch [463/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:38,288 - INFO - Epoch [464/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:38,496 - INFO - Epoch [465/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:38,696 - INFO - Epoch [466/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:38,901 - INFO - Epoch [467/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:39,139 - INFO - Epoch [468/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:39,348 - INFO - Epoch [469/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:39,557 - INFO - Epoch [470/1000] (0.2s) | Train Loss: 1.2258, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:39,815 - INFO - Epoch [471/1000] (0.3s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:40,034 - INFO - Epoch [472/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:40,243 - INFO - Epoch [473/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:40,469 - INFO - Epoch [474/1000] (0.2s) | Train Loss: 1.2303, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:40,674 - INFO - Epoch [475/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:40,877 - INFO - Epoch [476/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:41,086 - INFO - Epoch [477/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:41,280 - INFO - Epoch [478/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:41,489 - INFO - Epoch [479/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:41,692 - INFO - Epoch [480/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:41,894 - INFO - Epoch [481/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:42,111 - INFO - Epoch [482/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:42,325 - INFO - Epoch [483/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:42,528 - INFO - Epoch [484/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:42,772 - INFO - Epoch [485/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:43,018 - INFO - Epoch [486/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:43,286 - INFO - Epoch [487/1000] (0.3s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:43,487 - INFO - Epoch [488/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:43,693 - INFO - Epoch [489/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:43,903 - INFO - Epoch [490/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:44,120 - INFO - Epoch [491/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:44,324 - INFO - Epoch [492/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:44,529 - INFO - Epoch [493/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:44,741 - INFO - Epoch [494/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:44,947 - INFO - Epoch [495/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:45,178 - INFO - Epoch [496/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:45,462 - INFO - Epoch [497/1000] (0.3s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:45,677 - INFO - Epoch [498/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:45,882 - INFO - Epoch [499/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:46,091 - INFO - Epoch [500/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:46,308 - INFO - Epoch [501/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:46,566 - INFO - Epoch [502/1000] (0.3s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:46,782 - INFO - Epoch [503/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:46,985 - INFO - Epoch [504/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:47,188 - INFO - Epoch [505/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:47,392 - INFO - Epoch [506/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:47,599 - INFO - Epoch [507/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:47,808 - INFO - Epoch [508/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:48,010 - INFO - Epoch [509/1000] (0.2s) | Train Loss: 1.2242, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:48,214 - INFO - Epoch [510/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:48,432 - INFO - Epoch [511/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:48,635 - INFO - Epoch [512/1000] (0.2s) | Train Loss: 1.2298, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:48,837 - INFO - Epoch [513/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:49,049 - INFO - Epoch [514/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:49,253 - INFO - Epoch [515/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:49,454 - INFO - Epoch [516/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:49,663 - INFO - Epoch [517/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:49,919 - INFO - Epoch [518/1000] (0.3s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:50,129 - INFO - Epoch [519/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:50,335 - INFO - Epoch [520/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:50,544 - INFO - Epoch [521/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:50,746 - INFO - Epoch [522/1000] (0.2s) | Train Loss: 1.2311, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:50,949 - INFO - Epoch [523/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:51,162 - INFO - Epoch [524/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:51,367 - INFO - Epoch [525/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:51,562 - INFO - Epoch [526/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:51,764 - INFO - Epoch [527/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:51,975 - INFO - Epoch [528/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:52,170 - INFO - Epoch [529/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:52,383 - INFO - Epoch [530/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:52,589 - INFO - Epoch [531/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:52,858 - INFO - Epoch [532/1000] (0.3s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:53,147 - INFO - Epoch [533/1000] (0.3s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:53,362 - INFO - Epoch [534/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:53,569 - INFO - Epoch [535/1000] (0.2s) | Train Loss: 1.2300, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:53,778 - INFO - Epoch [536/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:53,977 - INFO - Epoch [537/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:54,187 - INFO - Epoch [538/1000] (0.2s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:54,399 - INFO - Epoch [539/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:54,620 - INFO - Epoch [540/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:54,835 - INFO - Epoch [541/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:55,051 - INFO - Epoch [542/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:55,264 - INFO - Epoch [543/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:55,483 - INFO - Epoch [544/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:55,750 - INFO - Epoch [545/1000] (0.3s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:55,964 - INFO - Epoch [546/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:56,171 - INFO - Epoch [547/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:56,374 - INFO - Epoch [548/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:56,586 - INFO - Epoch [549/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:56,799 - INFO - Epoch [550/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:57,019 - INFO - Epoch [551/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:57,226 - INFO - Epoch [552/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:57,432 - INFO - Epoch [553/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:57,637 - INFO - Epoch [554/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:57,843 - INFO - Epoch [555/1000] (0.2s) | Train Loss: 1.2308, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:58,061 - INFO - Epoch [556/1000] (0.2s) | Train Loss: 1.2282, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:58,276 - INFO - Epoch [557/1000] (0.2s) | Train Loss: 1.2279, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:58,474 - INFO - Epoch [558/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:58,691 - INFO - Epoch [559/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:58,908 - INFO - Epoch [560/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:59,156 - INFO - Epoch [561/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:59,354 - INFO - Epoch [562/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:59,569 - INFO - Epoch [563/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:59,775 - INFO - Epoch [564/1000] (0.2s) | Train Loss: 1.2308, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:02:59,988 - INFO - Epoch [565/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:00,199 - INFO - Epoch [566/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:00,409 - INFO - Epoch [567/1000] (0.2s) | Train Loss: 1.2268, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:00,622 - INFO - Epoch [568/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:00,844 - INFO - Epoch [569/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:01,056 - INFO - Epoch [570/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:01,265 - INFO - Epoch [571/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:01,460 - INFO - Epoch [572/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:01,669 - INFO - Epoch [573/1000] (0.2s) | Train Loss: 1.2252, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:01,895 - INFO - Epoch [574/1000] (0.2s) | Train Loss: 1.2263, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:02,095 - INFO - Epoch [575/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:02,284 - INFO - Epoch [576/1000] (0.2s) | Train Loss: 1.2260, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:02,491 - INFO - Epoch [577/1000] (0.2s) | Train Loss: 1.2287, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:02,689 - INFO - Epoch [578/1000] (0.2s) | Train Loss: 1.2276, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:02,979 - INFO - Epoch [579/1000] (0.3s) | Train Loss: 1.2292, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:03,181 - INFO - Epoch [580/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:03,373 - INFO - Epoch [581/1000] (0.2s) | Train Loss: 1.2284, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:03,560 - INFO - Epoch [582/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:03,747 - INFO - Epoch [583/1000] (0.2s) | Train Loss: 1.2255, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:03,938 - INFO - Epoch [584/1000] (0.2s) | Train Loss: 1.2274, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:04,118 - INFO - Epoch [585/1000] (0.2s) | Train Loss: 1.2295, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:04,313 - INFO - Epoch [586/1000] (0.2s) | Train Loss: 1.2266, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:04,506 - INFO - Epoch [587/1000] (0.2s) | Train Loss: 1.2271, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543
+2025-11-07 17:03:04,696 - INFO - Epoch [588/1000] (0.2s) | Train Loss: 1.2290, Acc: 0.5161 | Val Loss: 1.2265, Acc: 0.5187, F1: 0.3543

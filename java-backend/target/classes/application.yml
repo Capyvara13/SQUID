@@ -1,0 +1,50 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: squid-core
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+
+logging:
+  level:
+    com.squid: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# SQUID Configuration
+squid:
+  security:
+    enable-mtls: false
+    kms-provider: local
+  crypto:
+    default-branching-factor: 4
+    default-depth: 3
+    default-leaf-bits: 128
+  ai:
+    python-service-url: ${PYTHON_IA_URL:http://python-ia:5000}
+    fallback-enabled: true
+    timeout-seconds: 30
+
+# PQC Configuration
+pqc:
+  signature-algorithm: DILITHIUM3
+  kem-algorithm: KYBER768
+  key-rotation-days: 90
+
+# Management endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always

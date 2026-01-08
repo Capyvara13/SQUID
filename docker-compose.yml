@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  java-backend:
+    build: ./java-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - PYTHON_IA_URL=http://python-ia:5000
+      - KMS_PROVIDER=local
+    volumes:
+      - ./test-vectors:/app/test-vectors
+    depends_on:
+      - python-ia
+    networks:
+      - squid-network
+
+  python-ia:
+    build: ./python-ia
+    ports:
+      - "5000:5000"
+    environment:
+      - MODEL_PATH=/app/models/squid_model.pth
+      - DETERMINISTIC_SEED=true
+    volumes:
+      - ./test-vectors:/app/test-vectors
+    networks:
+      - squid-network
+
+networks:
+  squid-network:
+    driver: bridge

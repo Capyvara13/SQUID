@@ -1,0 +1,21 @@
+Role: Atue como um Engenheiro de Software Sênior e Auditor de Sistemas.
+
+Contexto: Tenho um projeto em desenvolvimento e o documento principal de referência é o RESEARCH_IMPLEMENTATION_PLAN.md. O objetivo final é ter o projeto totalmente funcional integrado ao dashboard QT atual.
+
+Tarefa:
+
+Realize uma leitura profunda de toda a documentação na pasta "SQUID\documentation", focando no RESEARCH_IMPLEMENTATION_PLAN.md.
+
+Compare os requisitos listados no plano com os arquivos de código existentes em todo o projeto.
+
+Identifique o que falta ou o que está implementado mas não funciona conforme o esperado.
+
+Ação: Implemente as funcionalidades faltantes, crie os arquivos necessários e ajuste o código existente para garantir que o projeto esteja 100% funcional.
+
+Restrições:
+
+Ignore completamente qualquer requisito relacionado ao TS Dashboard (TypeScript).
+
+Garanta compatibilidade total com o QT Dashboard.
+
+Mantenha o padrão de arquitetura já presente no projeto.

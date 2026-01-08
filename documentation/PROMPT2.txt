@@ -1,0 +1,327 @@
+You are working on SQUID (Simulação Quântica Inspirada para Defesa de Dados), a hybrid post-quantum security system combining Java + Python, post-quantum cryptography, Merkle Trees, hardware fingerprinting, assembly-based primitives, and quantum-inspired probabilistic behavior.
+
+Your task is to evolve SQUID from a research-oriented system into a professional, production-capable security platform, without weakening its core research concepts.
+
+🎯 PRIMARY OBJECTIVE
+
+Transform SQUID into a usable professional security system by:
+
+Making encryption and decryption explicit, testable, and configurable
+
+Introducing operational key management
+
+Exposing clear system states, health, and confidence metrics
+
+Expanding the Dashboard for operational, security, and audit use
+
+Preserving hardware-bound, assembly-assisted, quantum-inspired behavior
+
+Maintaining auditability and scientific rigor
+
+🔐 1. CRYPTOGRAPHIC PIPELINE (MANDATORY)
+
+Implement a clear, documented Encrypt / Decrypt pipeline.
+
+1.1 Encryption Flow
+
+The system must expose a clear API or internal contract:
+
+plaintext
+ → canonicalization
+ → pre-hash
+ → assembly-based hash mixing (hardware-influenced)
+ → post-quantum encryption (Kyber / Dilithium / SPHINCS+)
+ → Merkle Tree insertion
+ → audit log entry
+ → ciphertext + metadata
+
+1.2 Decryption Flow
+
+Decryption must be context-dependent, not unconditional:
+
+ciphertext
+ → context validation (hardware state, agent, time window)
+ → fingerprint confidence evaluation
+ → Merkle proof verification
+ → post-quantum decryption
+ → plaintext (or controlled failure)
+
+1.3 API Contract (example)
+POST /encrypt
+{
+  "data": "...",
+  "security_profile": "PRODUCTION | RESEARCH | COMPLIANCE",
+  "options": {
+    "hardware_bound": true,
+    "quantum_mode": true,
+    "audit_level": "FULL | LIMITED"
+  }
+}
+
+POST /decrypt
+{
+  "ciphertext": "...",
+  "context": {
+    "agent_id": "...",
+    "timestamp": "...",
+    "hardware_state": "..."
+  }
+}
+
+🔑 2. KEY MANAGEMENT (REQUIRED FOR PROFESSIONAL USE)
+
+Implement a minimal but explicit Key Lifecycle System:
+
+Key generation (PQC)
+
+Key rotation
+
+Key revocation
+
+Key scoping:
+
+per agent
+
+per hardware
+
+per session (optional)
+
+Expose:
+
+key status
+
+rotation history
+
+revocation events (audit-only, no secrets leaked)
+
+🧬 3. HARDWARE FINGERPRINTING — OPERATIONALIZED
+3.1 Fingerprint Modes
+
+The system must support graceful degradation:
+
+FULL       → ASM + microarchitectural + temporal
+REDUCED    → temporal + timing-based
+SOFTWARE   → software-only fallback
+
+
+These modes must:
+
+affect SR and C
+
+be logged
+
+be visible in the dashboard
+
+3.2 Fingerprint Confidence
+
+Expose only a confidence score, never raw fingerprint data:
+
+Fingerprint Confidence Score: 0.0 – 1.0
+
+
+This score conditions:
+
+decrypt authorization
+
+Merkle mutation behavior
+
+AI decisions
+
+🧠 4. AI DECISION LAYER — PROFESSIONAL REQUIREMENTS
+4.1 Explainability (Minimal, Safe)
+
+Each AI decision must expose:
+
+{
+  "decision": "MUTATE_TREE | INSERT_DECOY | HOLD_STATE",
+  "confidence": 0.78,
+  "drivers": [
+    "fingerprint_drift",
+    "entropy_spike",
+    "low_temporal_coherence"
+  ]
+}
+
+
+No internal weights or sensitive values should be exposed.
+
+4.2 AI Modes
+
+Support explicit modes:
+
+ADAPTIVE       → production
+DETERMINISTIC  → audit/compliance
+LOCKED         → incident response
+
+⚛️ 5. QUANTUM-INSPIRED BEHAVIOR (CONTROLLED)
+
+Implement statistical superposition, not fixed values
+
+Use conditional collapse triggered by:
+
+Merkle validation
+
+AI decisions
+
+time decay
+
+inspection pressure
+
+Introduce an Entropy Budget (EB):
+
+Each collapse consumes EB
+
+Prevents uncontrolled chaos
+
+Maintains auditability
+
+📊 6. QT DASHBOARD — REQUIRED EXPANSIONS
+
+The QT Dashboard must evolve from visualization to operational control and security observability.
+
+6.1 Global System Health Panel
+
+Display clearly:
+
+Cryptography Status: OK | DEGRADED
+
+Fingerprint Mode: FULL | REDUCED | SOFTWARE
+
+Fingerprint Confidence (numeric + trend)
+
+AI Mode: ADAPTIVE | DETERMINISTIC | LOCKED
+
+Merkle Tree State: STABLE | MUTATING | HIGH-ENTROPY
+
+6.2 Security Events Timeline
+
+Classified, human-readable events:
+
+Replay attempt detected
+
+VM / emulation suspected
+
+Fingerprint drift detected
+
+Entropy collapse triggered
+
+Merkle mutation event
+
+Each event must include:
+
+timestamp
+
+severity
+
+affected agent/module
+
+6.3 Cryptographic Operations View
+
+Per operation:
+
+Encrypt / Decrypt
+
+Security profile used
+
+Fingerprint confidence at time of operation
+
+Success / controlled failure
+
+Audit hash / Merkle proof reference
+
+6.4 Advanced Inspection Modes
+
+Dashboard must support:
+
+FULL     → research
+LIMITED  → production
+BLIND    → hostile / high-risk environment
+
+
+Inspection depth must affect system behavior (observer effect).
+
+⚙️ 7. CONFIGURATION & PROFILES
+
+Implement explicit security profiles:
+
+profiles:
+  research:
+    quantum_mode: true
+    inspection: full
+    ai_mode: adaptive
+    fingerprint: full
+
+  production:
+    quantum_mode: true
+    inspection: limited
+    ai_mode: adaptive
+    fingerprint: full
+
+  compliance:
+    quantum_mode: false
+    inspection: full
+    ai_mode: deterministic
+    fingerprint: reduced
+
+
+Profiles must be switchable without recompilation.
+
+🧪 8. TESTING & VALIDATION (NON-NEGOTIABLE)
+
+Provide:
+
+Encrypt/Decrypt tests
+
+Replay attack tests
+
+VM/emulation tests
+
+Fingerprint drift tests
+
+Determinism tests (Java ↔ Python)
+
+Expose results via:
+
+CLI
+
+Dashboard
+
+structured logs
+
+📦 9. PRODUCTIZATION REQUIREMENTS
+
+The system must clearly document:
+
+Supported use cases (e.g. hardware-bound key vault, anti-replay signatures)
+
+Threat model (what SQUID protects vs what it does not)
+
+Deployment limitations
+
+Fallback behavior
+
+✅ EXPECTED OUTCOME
+
+After implementation, SQUID must be:
+
+Usable in real environments
+
+Auditable and explainable
+
+Hardware-dependent without being brittle
+
+Secure by design, not obscurity
+
+Scientifically defensible
+
+Operationally observable
+
+Do NOT simplify or remove:
+
+hardware fingerprinting
+
+assembly-based primitives
+
+quantum-inspired probabilistic logic
+
+Instead, make them operational, visible, and controllable.
