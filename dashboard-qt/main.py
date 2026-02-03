@@ -30,7 +30,7 @@ import urllib.error
 from PySide6.QtWidgets import (QApplication, QWidget, QPushButton, QTextEdit,
                                QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
                                QMessageBox, QCheckBox, QSpinBox, QGraphicsView,
-                               QGraphicsScene, QListWidget, QFileDialog)
+                               QGraphicsScene, QListWidget, QFileDialog, QComboBox)
 from PySide6.QtGui import QBrush, QPen, QColor
 from PySide6.QtCore import QRectF
 from PySide6.QtCore import Slot, Signal, QObject
@@ -187,6 +187,9 @@ class MainWindow(QWidget):
         self.ipc = None
         # Per-leaf metadata from AI decisions (index -> action)
         self._leaf_actions = {}
+        # Communication mode and backend URL for HTTP/IPC switching
+        self.comm_mode = "IPC"
+        self.backend_url = "http://localhost:8080"
 
         self.javaCmdInput = QLineEdit(DEFAULT_JAVA_CMD)
         self.startBtn = QPushButton('Start Java IPC')
@@ -198,6 +201,25 @@ class MainWindow(QWidget):
         self.refreshHealthBtn = QPushButton('Refresh System Health')
         self.refreshCryptoBtn = QPushButton('Refresh Crypto Ops')
         self.autoApplyCheck = QCheckBox('Auto-apply rotation')
+
+        # Instance & HTTP crypto widgets
+        self.instanceSelect = QComboBox()
+        self.refreshInstancesBtn = QPushButton('Refresh Instances')
+
+        self.encryptInput = QTextEdit()
+        self.encryptInput.setPlaceholderText('Enter plaintext to encrypt with SQUID pipeline (HTTP)...')
+        self.encryptBtn = QPushButton('Encrypt (HTTP)')
+
+        self.decryptCipherInput = QTextEdit()
+        self.decryptCipherInput.setPlaceholderText('Ciphertext (Base64) from /api/v1/crypto/encrypt')
+        self.decryptMetaInput = QTextEdit()
+        self.decryptMetaInput.setPlaceholderText('Metadata JSON (encapsulated_key, signature, merkle_root, etc.)')
+        self.decryptPreviewCheck = QCheckBox('Preview only')
+        self.decryptPreviewCheck.setChecked(True)
+        self.decryptBtn = QPushButton('Decrypt (HTTP)')
+        self.decryptOutput = QTextEdit()
+        self.decryptOutput.setReadOnly(True)
+        self.decryptOutput.setPlaceholderText('Decrypt preview output will appear here...')
 
         self.log = QTextEdit()
         self.log.setReadOnly(True)
@@ -236,6 +258,28 @@ class MainWindow(QWidget):
         self.generateBtn = QPushButton('Generate PQC & Build Merkle')
         paramsLayout.addWidget(self.generateBtn)
 
+        # Instance selector (HTTP mode)
+        instanceLayout = QHBoxLayout()
+        instanceLayout.addWidget(QLabel('Instance:'))
+        self.instanceSelect.setMinimumWidth(180)
+        instanceLayout.addWidget(self.instanceSelect)
+        instanceLayout.addWidget(self.refreshInstancesBtn)
+
+        # HTTP Encrypt / Decrypt controls
+        cryptoLayout = QVBoxLayout()
+        cryptoLayout.addWidget(QLabel('Encrypt data (HTTP / per-instance):'))
+        cryptoLayout.addWidget(self.encryptInput)
+        cryptoLayout.addWidget(self.encryptBtn)
+
+        cryptoLayout.addWidget(QLabel('Decrypt data (HTTP / preview):'))
+        cryptoLayout.addWidget(self.decryptCipherInput)
+        cryptoLayout.addWidget(self.decryptMetaInput)
+        decryptButtonsLayout = QHBoxLayout()
+        decryptButtonsLayout.addWidget(self.decryptPreviewCheck)
+        decryptButtonsLayout.addWidget(self.decryptBtn)
+        cryptoLayout.addLayout(decryptButtonsLayout)
+        cryptoLayout.addWidget(self.decryptOutput)
+
         btnLayout = QHBoxLayout()
         btnLayout.addWidget(self.healthBtn)
         btnLayout.addWidget(self.decideBtn)
@@ -249,8 +293,10 @@ class MainWindow(QWidget):
         leftLayout = QVBoxLayout()
         leftLayout.addLayout(topLayout)
         leftLayout.addLayout(paramsLayout)
+        leftLayout.addLayout(instanceLayout)
+        leftLayout.addLayout(cryptoLayout)
         leftLayout.addLayout(btnLayout)
-        leftLayout.addWidget(QLabel('IPC Log:'))
+        leftLayout.addWidget(QLabel('IPC / HTTP Log:'))
         leftLayout.addWidget(self.log)
 
         # Right area: merkle tree visualization and history
@@ -310,6 +356,12 @@ class MainWindow(QWidget):
         self.refreshCryptoBtn.clicked.connect(self.on_refresh_crypto)
         self.autoApplyCheck.stateChanged.connect(lambda _: None)
         self.generateBtn.clicked.connect(self.on_generate)
+        self.refreshInstancesBtn.clicked.connect(self.refreshInstances)
+        self.encryptBtn.clicked.connect(self.on_encrypt_http)
+        self.decryptBtn.clicked.connect(self.on_decrypt_http)
+
+        # Try to load instances on startup when HTTP is available
+        self.refreshInstances()
 
     @Slot()
     def on_start(self):
@@ -347,17 +399,32 @@ class MainWindow(QWidget):
 
     @Slot()
     def on_health(self):
+        """Check health via HTTP when possible, otherwise via IPC."""
+        # Prefer HTTP if backend reachable
+        if self._check_http_available():
+            data = self._fetch_json('/api/v1/system/health')
+            if not data:
+                return
+            try:
+                self.healthStatusLabel.setText(f"Crypto: {data.get('cryptography_status', 'UNKNOWN')}")
+                self.fpModeLabel.setText(f"FP Mode: {data.get('fingerprint_mode', '-')}")
+                self.fpConfidenceLabel.setText(f"FP Confidence: {data.get('fingerprint_confidence', '-')}")
+                self.aiModeStatusLabel.setText(f"AI Mode: {data.get('ai_mode', '-')}")
+                self.merkleStateLabel.setText(f"Merkle: {data.get('merkle_state', '-')}")
+            except Exception:
+                pass
+            self.log.append('> health (HTTP)')
+            return
+
+        # Fallback: IPC health
         if not self.ipc:
             QMessageBox.warning(self, 'Warning', 'Start Java IPC first')
             return
-        self.ipc.send({ 'cmd': 'health' })
-        self.log.append('> health')
+        self.ipc.send({'cmd': 'health'})
+        self.log.append('> health (IPC)')
 
     @Slot()
     def on_decide(self):
-        if not self.ipc:
-            QMessageBox.warning(self, 'Warning', 'Start Java IPC first')
-            return
         # Prepare a small sample payload
         payload = {
             'params': {'b': int(self.bSpin.value()), 'm': int(self.mSpin.value()), 't': int(self.tSpin.value())},
@@ -377,13 +444,34 @@ class MainWindow(QWidget):
                 }
             ]
         }
-        # include auto_apply flag at root so IPCMain can read it directly
+        auto_apply = self.autoApplyCheck.isChecked()
+
+        # Prefer HTTP if backend reachable and AI endpoint implemented
+        if self._check_http_available():
+            body = {'params': payload['params'], 'features': payload['features'], 'auto_apply': auto_apply}
+            res = self._post_json('/api/v1/ai/decide', body)
+            if res:
+                self.log.append('> decide (HTTP)')
+                # Reuse existing JSON handling logic
+                self.on_received(json.dumps(res))
+                try:
+                    total_leaves = int(self.bSpin.value()) ** int(self.mSpin.value())
+                    self.draw_tree(total_leaves)
+                except Exception:
+                    pass
+                return
+
+        # Fallback: IPC
+        if not self.ipc:
+            QMessageBox.warning(self, 'Warning', 'Start Java IPC first')
+            return
+
         msg = {'cmd': 'decide', 'payload': payload}
-        if self.autoApplyCheck.isChecked():
+        if auto_apply:
             msg['auto_apply'] = True
-            self.log.append('> decide (auto-apply)')
+            self.log.append('> decide (IPC, auto-apply)')
         else:
-            self.log.append('> decide')
+            self.log.append('> decide (IPC)')
 
         self.ipc.send(msg)
 
@@ -396,19 +484,26 @@ class MainWindow(QWidget):
 
     @Slot()
     def on_rotate(self):
+        indices = [0, 1, 2]
+        reason = 'qt-ui-request'
+
+        # Prefer HTTP if backend reachable
+        if self._check_http_available():
+            body = {'indices': indices, 'reason': reason}
+            res = self._post_json('/api/v1/merkle/rotate-indices', body)
+            if res:
+                self.log.append('> rotate_indices (HTTP) [0,1,2]')
+                self.on_received(json.dumps(res))
+                returnn
+        # Fallback: IPC
         if not self.ipc:
             QMessageBox.warning(self, 'Warning', 'Start Java IPC first')
             return
-        # Ask Java to rotate indices 0..2 as sample
-        self.ipc.send({'cmd': 'rotate_indices', 'payload': {'indices': [0,1,2], 'reason': 'qt-ui-request'}})
-        self.log.append('> rotate_indices [0,1,2]')
+        self.ipc.send({'cmd': 'rotate_indices', 'payload': {'indices': indices, 'reason': reason}})
+        self.log.append('> rotate_indices (IPC) [0,1,2]')
 
     @Slot()
     def on_generate(self):
-        if not self.ipc:
-            QMessageBox.warning(self, 'Warning', 'Start Java IPC first')
-            return
-
         seed = self.seedInput.text().strip()
         if not seed:
             QMessageBox.warning(self, 'Warning', 'Enter a seed string to derive PQC key / leaves')
@@ -418,10 +513,25 @@ class MainWindow(QWidget):
             'seed': seed,
             'params': {'b': int(self.bSpin.value()), 'm': int(self.mSpin.value()), 't': int(self.tSpin.value())}
         }
-        self.ipc.send({'cmd': 'generate', 'payload': payload})
-        self.log.append('> generate (seed provided)')
 
-    def _fetch_json(self, url: str):
+        # Prefer HTTP if backend reachable
+        if self._check_http_available():
+            res = self._post_json('/api/v1/merkle/generate-from-seed', payload)
+            if res:
+                self.log.append('> generate (HTTP, seed provided)')
+                self.on_received(json.dumps(res))
+                return
+
+        # Fallback: IPC
+        if not self.ipc:
+            QMessageBox.warning(self, 'Warning', 'Start Java IPC first')
+            return
+        self.ipc.send({'cmd': 'generate', 'payload': payload})
+        self.log.append('> generate (IPC, seed provided)')
+
+    def _fetch_json(self, path: str):
+        """GET JSON from backend using relative path like '/api/v1/system/health'."""
+        url = f"{self.backend_url}{path}"
         try:
             req = urllib.request.Request(url, headers={'Accept': 'application/json'})
             with urllib.request.urlopen(req, timeout=3) as resp:
@@ -432,33 +542,184 @@ class MainWindow(QWidget):
                 self.log.append(f'REST error: {e}')
             except Exception:
                 pass
+            # If HTTP fails, fall back to IPC mode
+            self.comm_mode = "IPC"
             return None
 
-    @Slot()
-    def on_history(self):
-        if not self.ipc:
-            QMessageBox.warning(self, 'Warning', 'Start Java IPC first')
-            return
-        self.ipc.send({'cmd': 'history'})
-        self.log.append('> history')
+    def _post_json(self, path: str, body: dict):
+        """POST JSON to backend; returns parsed JSON or None on error."""
+        url = f"{self.backend_url}{path}"
+        try:
+            data = json.dumps(body).encode('utf-8')
+            req = urllib.request.Request(
+                url,
+                data=data,
+                headers={
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                method='POST',
+            )
+            with urllib.request.urlopen(req, timeout=5) as resp:
+                text = resp.read().decode('utf-8')
+            return json.loads(text)
+        except Exception as e:
+            try:
+                self.log.append(f'REST POST error {path}: {e}')
+            except Exception:
+                pass
+            self.comm_mode = "IPC"
+            return None
 
-    @Slot()
-    def on_refresh_health(self):
-        data = self._fetch_json('http://localhost:8080/api/v1/system/health')
-        if not data:
+    def _check_http_available(self) -> bool:
+        """Detect if the HTTP backend is reachable; switch comm_mode accordingly."""
+        test_path = "/api/v1/system/health"
+        url = f"{self.backend_url}{test_path}"
+        try:
+            req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+            with urllib.request.urlopen(req, timeout=2):
+                pass
+            self.comm_mode = "HTTP"
+            try:
+                self.log.append(f"HTTP mode enabled (reachable: {url})")
+            except Exception:
+                pass
+            return True
+        except Exception:
+            self.comm_mode = "IPC"
+            try:
+                self.log.append("HTTP backend not reachable, using IPC mode")
+            except Exception:
+                pass
+            return False
+
+    def _current_instance_id(self) -> str:
+        """Return currently selected instance ID or empty string."""
+        try:
+            idx = self.instanceSelect.currentIndex()
+            if idx < 0:
+                return ""
+            data = self.instanceSelect.itemData(idx)
+            return data or ""
+        except Exception:
+            return ""
+
+    def refreshInstances(self):
+        """Fetch list of instances from backend (HTTP-only)."""
+        if not self._check_http_available():
+            return
+        data = self._fetch_json('/api/v1/instances')
+        if not data or not isinstance(data, list):
             return
         try:
-            self.healthStatusLabel.setText(f"Crypto: {data.get('cryptography_status', 'UNKNOWN')}")
-            self.fpModeLabel.setText(f"FP Mode: {data.get('fingerprint_mode', '-')}")
-            self.fpConfidenceLabel.setText(f"FP Confidence: {data.get('fingerprint_confidence', '-')}")
-            self.aiModeStatusLabel.setText(f"AI Mode: {data.get('ai_mode', '-')}")
-            self.merkleStateLabel.setText(f"Merkle: {data.get('merkle_state', '-')}")
+            self.instanceSelect.clear()
+            self.instanceSelect.addItem('(no instance)', '')
+            for inst in data:
+                inst_id = inst.get('id', '')
+                name = inst.get('name', inst_id)
+                if inst_id:
+                    label = f"{name} ({inst_id[:8]})"
+                else:
+                    label = name
+                self.instanceSelect.addItem(label, inst_id)
         except Exception:
             pass
 
     @Slot()
+    def on_encrypt_http(self):
+        if not self._check_http_available():
+            QMessageBox.warning(self, 'Warning', 'HTTP backend not reachable; cannot encrypt.')
+            return
+        text = self.encryptInput.toPlainText().strip()
+        if not text:
+            QMessageBox.warning(self, 'Warning', 'Enter plaintext to encrypt.')
+            return
+        instance_id = self._current_instance_id()
+        body = {'data': text}
+        if instance_id:
+            body['instance_id'] = instance_id
+        res = self._post_json('/api/v1/crypto/encrypt', body)
+        if not res:
+            return
+        try:
+            pretty = json.dumps(res, indent=2, ensure_ascii=False)
+            self.log.append('Encrypt (HTTP) response:')
+            self.log.append(pretty)
+        except Exception:
+            pass
+
+    @Slot()
+    def on_decrypt_http(self):
+        if not self._check_http_available():
+            QMessageBox.warning(self, 'Warning', 'HTTP backend not reachable; cannot decrypt.')
+            return
+        ciphertext = self.decryptCipherInput.toPlainText().strip()
+        if not ciphertext:
+            QMessageBox.warning(self, 'Warning', 'Enter ciphertext (Base64) to decrypt.')
+            return
+        meta_text = self.decryptMetaInput.toPlainText().strip()
+        if not meta_text:
+            QMessageBox.warning(self, 'Warning', 'Enter metadata JSON used during encrypt.')
+            return
+        try:
+            metadata = json.loads(meta_text)
+        except Exception as e:
+            QMessageBox.warning(self, 'Warning', f'Invalid metadata JSON: {e}')
+            return
+        instance_id = self._current_instance_id()
+        body = {
+            'ciphertext': ciphertext,
+            'metadata': metadata,
+            'preview_only': self.decryptPreviewCheck.isChecked(),
+        }
+        if instance_id:
+            body['instance_id'] = instance_id
+        res = self._post_json('/api/v1/crypto/decrypt', body)
+        if not res:
+            return
+        try:
+            if res.get('authorized'):
+                pt = res.get('plaintext', '')
+                self.decryptOutput.setPlainText(pt or '')
+            else:
+                reason = res.get('failure_reason', 'unauthorized')
+                self.decryptOutput.setPlainText(f'[UNAUTHORIZED] reason={reason}')
+            pretty = json.dumps(res, indent=2, ensure_ascii=False)
+            self.log.append('Decrypt (HTTP) response:')
+            self.log.append(pretty)
+        except Exception:
+            pass
+
+    @Slot()
+    def on_history(self):
+        # Prefer HTTP history endpoint when available
+        if self._check_http_available():
+            data = self._fetch_json('/api/v1/merkle/history')
+            if data:
+                self.log.append('> history (HTTP)')
+                self.on_received(json.dumps(data))
+                return
+
+        # Fallback: IPC history
+        if not self.ipc:
+            QMessageBox.warning(self, 'Warning', 'Start Java IPC first')
+            return
+        self.ipc.send({'cmd': 'history'})
+        self.log.append('> history (IPC)')
+
+    @Slot()
+    def on_refresh_health(self):
+        # Reuse on_health, which already selects HTTP vs IPC
+        self.on_health()
+
+    @Slot()
     def on_refresh_crypto(self):
-        data = self._fetch_json('http://localhost:8080/api/v1/crypto/operations')
+        # Crypto operations history is HTTP-only; if offline, just inform user.
+        if not self._check_http_available():
+            QMessageBox.information(self, 'Info', 'HTTP backend not reachable; crypto operations history only available online.')
+            return
+
+        data = self._fetch_json('/api/v1/crypto/operations')
         if not data or not isinstance(data, list):
             return
         try:
