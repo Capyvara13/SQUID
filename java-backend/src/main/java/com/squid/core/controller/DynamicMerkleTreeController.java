@@ -212,4 +212,85 @@ public class DynamicMerkleTreeController {
             return ResponseEntity.badRequest().build();
         }
     }
+
+    /**
+     * Generate deterministic leaves from a seed and append to the Merkle tree.
+     * Mirrors the IPCMain "generate" behaviour for HTTP callers.
+     * POST /api/v1/merkle/generate-from-seed
+     * Body: {
+     *   "seed": "...",
+     *   "params": { "b": 4, "m": 3, "t": 128 }
+     * }
+     */
+    @PostMapping("/generate-from-seed")
+    public ResponseEntity<Map<String, Object>> generateFromSeed(@RequestBody Map<String, Object> request) {
+        try {
+            String seed = (String) request.get("seed");
+            if (seed == null || seed.isEmpty()) {
+                return ResponseEntity.badRequest().build();
+            }
+
+            @SuppressWarnings("unchecked")
+            Map<String, Object> params = (Map<String, Object>) request.get("params");
+            int b = 4, m = 3;
+            if (params != null) {
+                Object bVal = params.get("b");
+                Object mVal = params.get("m");
+                if (bVal instanceof Number) b = ((Number) bVal).intValue();
+                if (mVal instanceof Number) m = ((Number) mVal).intValue();
+            }
+
+            int totalLeaves = 1;
+            try {
+                totalLeaves = (int) Math.pow(b, m);
+            } catch (Exception ignored) {}
+            totalLeaves = Math.max(1, Math.min(totalLeaves, 256));
+
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA-256");
+            java.util.List<String> newLeaves = new java.util.ArrayList<>();
+            for (int i = 0; i < totalLeaves; i++) {
+                md.reset();
+                md.update(seed.getBytes(java.nio.charset.StandardCharsets.UTF_8));
+                md.update((byte) ':');
+                md.update(Integer.toString(i).getBytes(java.nio.charset.StandardCharsets.UTF_8));
+                byte[] h = md.digest();
+                StringBuilder sb = new StringBuilder();
+                for (byte bb : h) sb.append(String.format("%02x", bb));
+                newLeaves.add(sb.toString());
+            }
+
+            Map<String, Object> result = merkleTreeService.addLeaves(newLeaves, "generate_from_seed_http");
+            return ResponseEntity.ok(result);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().build();
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+
+    /**
+     * Rotate specific leaf indices.
+     * Mirrors the IPCMain "rotate_indices" behaviour for HTTP callers.
+     * POST /api/v1/merkle/rotate-indices
+     * Body: { "indices": [0,1,2], "reason": "..." }
+     */
+    @PostMapping("/rotate-indices")
+    public ResponseEntity<Map<String, Object>> rotateByIndices(@RequestBody Map<String, Object> request) {
+        try {
+            java.util.List<Integer> indices = new java.util.ArrayList<>();
+            Object idx = request.get("indices");
+            if (idx instanceof java.util.List<?>) {
+                for (Object o : (java.util.List<?>) idx) {
+                    if (o instanceof Number) {
+                        indices.add(((Number) o).intValue());
+                    }
+                }
+            }
+            String reason = (String) request.get("reason");
+            Map<String, Object> res = merkleTreeService.rotateLeavesByIndex(indices, reason);
+            return ResponseEntity.ok(res);
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().build();
+        }
+    }
 }

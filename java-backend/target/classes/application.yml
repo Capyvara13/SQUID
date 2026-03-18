@@ -33,6 +33,9 @@ squid:
     fallback-enabled: true
     timeout-seconds: 30
 
+  pqc:
+    strict: false
+
 # PQC Configuration
 pqc:
   signature-algorithm: DILITHIUM3

@@ -1,6 +1,3 @@
-# SQUID Model Training - Setup and Train Script (NO VENV VERSION)
-# This version installs and runs everything using the system Python installation.
-
 param(
     [switch]$QuickTest,
     [int]$NumSamples = 10000,

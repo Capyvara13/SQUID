@@ -1,0 +1,388 @@
+Requisitos do Sistema – Dashboard SQUID
+1. Controle manual de serviços
+Problema atual
+
+Atualmente os serviços:
+
+IPC (comunicação Java ↔ Python)
+
+HTTP API
+
+são iniciados automaticamente.
+
+Mudança necessária
+
+Remover inicialização automática e implementar controle manual via dashboard.
+
+Requisitos
+
+O dashboard deve possuir um painel Controle de Serviços contendo:
+
+Botões:
+
+Iniciar API HTTP
+
+Parar API HTTP
+
+Iniciar IA (PyTorch)
+
+Parar IA
+
+Iniciar comunicação IPC
+
+Parar comunicação IPC
+
+Status exibido:
+
+ONLINE
+
+OFFLINE
+
+ERRO
+
+Objetivo:
+
+permitir manutenção
+
+evitar execução desnecessária
+
+melhorar segurança
+
+2. Sistema de Instâncias
+Conceito
+
+Uma instância SQUID representa um processo isolado de criptografia de um dado.
+
+Cada instância possui:
+
+configuração própria
+
+Merkle Tree própria
+
+execução própria da IA
+
+histórico próprio
+
+Estrutura da Instância
+
+Cada instância deve conter:
+
+Instância
+ ├ id
+ ├ nome
+ ├ data_criação
+ ├ status
+ ├ configuração (B, M, T)
+ ├ seed_root
+ ├ merkle_root
+ ├ leafs[]
+ ├ histórico
+ ├ logs IA
+3. Fluxo de criação de instância
+
+Processo quando o usuário cria uma instância:
+
+Passo 1
+
+Usuário cria instância:
+
+Nome: inst1
+Configuração:
+B = 2
+M = 8
+T = 256
+Passo 2
+
+Usuário insere dado:
+
+texto
+
+arquivo
+
+Passo 3 – Criptografia inicial
+
+O dado passa por:
+
+1️⃣ Hash inicial
+2️⃣ Encapsulamento Kyber (KEM)
+3️⃣ Assinatura Dilithium
+
+Resultado:
+
+seed_root
+Passo 4 – Geração da Merkle Tree
+
+A seed gera as leafs:
+
+seed_root
+   ↓
+leaf1 leaf2
+   ↓
+leaf3 leaf4 leaf5 leaf6
+   ↓
+...
+
+Seguindo:
+
+L = B^M
+
+Cada leaf passa por:
+
+HKDF
+→ hash
+→ criptografia
+Passo 5 – Execução da IA
+
+A IA em PyTorch executa dentro da instância.
+
+Ela analisa:
+
+SR
+
+C
+
+entropia
+
+profundidade
+
+histórico
+
+A IA pode:
+
+VALID
+DECOY
+MUTATE
+REASSIGN
+4. Tabela de Instâncias no Dashboard
+
+A interface deve exibir uma tabela:
+
+Nome	Status	Leafs	Merkle Root	Criado em	Ações
+
+Botão Ações abre menu.
+
+5. Operações por instância
+
+Cada instância deve possuir as seguintes operações.
+
+5.1 Remover LEAFs
+
+Remove uma ou mais leafs da árvore.
+
+Regras:
+
+NÃO altera o dado original
+
+recalcula Merkle Tree
+
+gera novo Merkle Root
+
+registra no histórico
+
+Uso:
+
+limpeza
+
+redução de árvore
+
+testes
+
+5.2 Excluir dado criptografado
+
+Remove completamente:
+
+seed
+
+leafs
+
+merkle tree
+
+histórico
+
+Mantém apenas registro mínimo.
+
+5.3 Criar endpoint HTTP
+
+Permite expor a instância via API.
+
+Exemplo:
+
+http://localhost:8080/squid/inst1
+
+Retorna:
+
+{
+  "instance": "inst1",
+  "merkle_root": "...",
+  "leaf_count": 256,
+  "status": "active"
+}
+
+Só funciona se o serviço HTTP estiver ativo.
+
+5.4 Enviar para banco de dados
+
+Usuário escolhe:
+
+MySQL
+
+PostgreSQL
+
+Dados enviados:
+
+instância
+merkle_root
+leafs
+configuração
+logs IA
+
+Objetivo:
+
+auditoria
+
+backup
+
+análise posterior
+
+5.5 Recriptografar
+
+Processo:
+
+descriptografar
+↓
+gerar nova seed
+↓
+gerar nova árvore
+↓
+nova assinatura
+
+Resultado:
+
+nova árvore
+
+novo merkle root
+
+novo log
+
+5.6 Descriptografar dado
+
+Usuário fornece extensão:
+
+Exemplo:
+
+txt
+pdf
+png
+json
+
+Fluxo:
+
+Merkle verification
+↓
+reconstrução seed
+↓
+decapsulação Kyber
+↓
+verificação Dilithium
+↓
+geração do arquivo
+
+Arquivo final:
+
+dados.extensão
+6. Visualização de LEAFs
+
+O dashboard deve permitir clicar em uma leaf.
+
+Ao clicar, abrir painel com:
+
+Leaf ID
+Hash
+Depth
+Entropy
+SR local
+C local
+Estado atual
+Histórico da Leaf
+
+Mostrar:
+
+estado anterior
+mutações
+decoys aplicados
+decisões da IA
+timestamps
+
+Exemplo:
+
+12:03 – criada
+12:05 – mutate
+12:07 – reassign
+7. Decisão da IA sobre rotação de leafs
+
+O modelo novo decide:
+
+qual leaf muda
+
+quando muda
+
+motivo
+
+Critérios:
+
+SR
+
+C
+
+entropia
+
+padrão de acesso
+
+tempo
+
+Isso reduz previsibilidade da árvore.
+
+8. Dashboard deve mostrar
+
+Painéis:
+
+Painel IA
+SR global
+C global
+ações tomadas
+Painel árvore
+
+Visualização gráfica:
+
+Merkle Tree
+
+com cores:
+
+verde = válida
+amarelo = decoy
+vermelho = mutate
+Painel hardware
+
+CPU
+RAM
+GPU (PyTorch)
+
+9. Logs
+
+Cada instância registra:
+
+decisões IA
+mutações
+recriptografias
+acessos
+10. Segurança
+
+Dashboard deve exigir:
+
+autenticação
+
+permissão por usuário
+
+assinatura dos logs
+
+Siga padrões de uso entre outros sistemas famosos, tanto em organização, funções e métodos de montagem de interface.

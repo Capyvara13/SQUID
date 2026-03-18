@@ -25,5 +25,9 @@ pytest-cov>=3.0.0
 black>=22.0.0
 flake8>=4.0.0
 
+# Database drivers
+psycopg2-binary>=2.9.0
+PyMySQL>=1.0.0
+
 # Optional PQC (placeholder for liboqs-python)
 # liboqs-python>=0.7.0  # Uncomment when available

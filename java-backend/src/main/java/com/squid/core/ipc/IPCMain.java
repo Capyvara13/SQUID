@@ -255,7 +255,7 @@ public class IPCMain {
         }
     }
 
-    private static String callPythonOnce(String payloadJson) throws IOException, InterruptedException {
+    public static String callPythonOnce(String payloadJson) throws IOException, InterruptedException {
         // Allow the launcher to specify a Python interpreter via environment variable
         // e.g. SQUID_PYTHON=C:\Python39\python.exe. If provided, try it first.
         String envPython = System.getenv("SQUID_PYTHON");

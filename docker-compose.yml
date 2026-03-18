@@ -1,6 +1,63 @@
 version: '3.8'
 
 services:
+  # ── Databases ──────────────────────────────────────────────
+  squid-postgres:
+    image: postgres:14-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: squiddb
+      POSTGRES_USER: squid
+      POSTGRES_PASSWORD: squid_secret
+    command:
+      - "postgres"
+      - "-c" 
+      - "shared_buffers=256MB"
+      - "-c"
+      - "work_mem=64MB"
+      - "-c"
+      - "maintenance_work_mem=512MB"
+      - "-c"
+      - "wal_compression=on"
+      - "-c"
+      - "ssl=off"
+      - "-c"
+      - "log_statement=mod"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U squid"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - squid-network
+
+  squid-mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: squiddb
+      MYSQL_USER: squid
+      MYSQL_PASSWORD: squid_secret
+      MYSQL_ROOT_PASSWORD: squid_root
+    command:
+      - "--require-secure-transport=OFF"
+      - "--innodb-buffer-pool-size=256M"
+      - "--max-connections=100"
+    volumes:
+      - mydata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - squid-network
+
+  # ── Application ────────────────────────────────────────────
   java-backend:
     build: ./java-backend
     ports:
@@ -8,10 +65,19 @@ services:
     environment:
       - PYTHON_IA_URL=http://python-ia:5000
       - KMS_PROVIDER=local
+      # Default to PostgreSQL in Docker
+      - SQUID_DB_TYPE=postgresql
+      - SQUID_DB_URL=jdbc:postgresql://squid-postgres:5432/squiddb
+      - SQUID_DB_USER=squid
+      - SQUID_DB_PASS=squid_secret
+      - SQUID_DB_DRIVER=org.postgresql.Driver
     volumes:
       - ./test-vectors:/app/test-vectors
     depends_on:
-      - python-ia
+      squid-postgres:
+        condition: service_healthy
+      python-ia:
+        condition: service_started
     networks:
       - squid-network
 
@@ -26,6 +92,10 @@ services:
       - ./test-vectors:/app/test-vectors
     networks:
       - squid-network
+
+volumes:
+  pgdata:
+  mydata:
 
 networks:
   squid-network:

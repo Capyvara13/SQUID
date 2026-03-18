@@ -29,14 +29,22 @@ public class CryptoPipelineService {
     private final PQCService pqcService;
     private final AssemblyHashMix assemblyHashMix = new AssemblyHashMix();
     private final HardwareFingerprintService fingerprintService;
+    private final LeafValidationService leafValidationService;
+    @org.springframework.beans.factory.annotation.Value("${squid.security.deep-gate:false}")
+    private boolean deepGate;
+    private final IterativeSeedEngine iterativeSeedEngine;
 
     // In-memory operation log for observability (can be replaced with DB later)
     private final List<Map<String, Object>> operations = Collections.synchronizedList(new ArrayList<>());
 
     public CryptoPipelineService(PQCService pqcService,
-                                 HardwareFingerprintService fingerprintService) {
+                                 HardwareFingerprintService fingerprintService,
+                                 LeafValidationService leafValidationService,
+                                 IterativeSeedEngine iterativeSeedEngine) {
         this.pqcService = pqcService;
         this.fingerprintService = fingerprintService;
+        this.leafValidationService = leafValidationService;
+        this.iterativeSeedEngine = iterativeSeedEngine;
     }
 
     /**
@@ -160,7 +168,46 @@ public class CryptoPipelineService {
             return resp;
         }
 
-        // 5) Context checks (placeholder: we will wire fingerprint + AI gating here)
+        // 5) Deep gate (optional): re-run iterative seed and compare
+        if (deepGate) {
+            try {
+                Object seedHexObj = meta.get("initial_seed_hex");
+                Object depthObj = meta.get("iterative_depth");
+                Object expectedFinalObj = meta.get("final_seed_hex");
+                if (seedHexObj instanceof String && depthObj instanceof Number && expectedFinalObj instanceof String) {
+                    byte[] seedBytes = hexToBytes((String) seedHexObj);
+                    int depth = ((Number) depthObj).intValue();
+                    var iterRes = iterativeSeedEngine.run(seedBytes, Math.max(1, depth));
+                    String finalHex = iterRes.finalSeedHex;
+                    if (!finalHex.equalsIgnoreCase((String) expectedFinalObj)) {
+                        resp.setAuthorized(false);
+                        resp.setFailureReason("iterative_seed_mismatch");
+                        recordOperation("DECRYPT", false, "iterative_seed_mismatch", meta);
+                        return resp;
+                    }
+                } else {
+                    resp.setAuthorized(false);
+                    resp.setFailureReason("missing_iterative_metadata");
+                    recordOperation("DECRYPT", false, "missing_iterative_metadata", meta);
+                    return resp;
+                }
+            } catch (Exception e) {
+                resp.setAuthorized(false);
+                resp.setFailureReason("iterative_seed_error");
+                recordOperation("DECRYPT", false, "iterative_seed_error", meta);
+                return resp;
+            }
+        }
+
+        // 6) Leaf-level context gate
+        boolean gateOk = leafValidationService.validateContext(mixedHash);
+        if (!gateOk) {
+            resp.setAuthorized(false);
+            resp.setFailureReason("leaf_validation_failed");
+            recordOperation("DECRYPT", false, "leaf_validation_failed", meta);
+            return resp;
+        }
+
         resp.setAuthorized(true);
         resp.setPlaintext(new String(plaintext, StandardCharsets.UTF_8));
         // fingerprint_confidence and ai_decision will be filled once those services exist
@@ -201,5 +248,15 @@ public class CryptoPipelineService {
             sb.append(String.format("%02x", b));
         }
         return sb.toString();
+    }
+
+    private byte[] hexToBytes(String hex) {
+        int len = hex.length();
+        byte[] data = new byte[len / 2];
+        for (int i = 0; i < len; i += 2) {
+            data[i / 2] = (byte) ((Character.digit(hex.charAt(i), 16) << 4)
+                    + Character.digit(hex.charAt(i+1), 16));
+        }
+        return data;
     }
 }

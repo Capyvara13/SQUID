@@ -27,6 +27,8 @@ public class PQCService {
     private DilithiumKeyPair dilithiumKeyPair;
     private KyberKeyPair kyberKeyPair;
     private boolean useLibOQS = false;
+    @org.springframework.beans.factory.annotation.Value("${squid.pqc.strict:false}")
+    private boolean pqcStrict;
 
     public PQCService() {
         this.random = new SecureRandom();
@@ -52,6 +54,10 @@ public class PQCService {
         } catch (Exception e) {
             useLibOQS = false;
             System.out.println("liboqs-java not available, using fallback PQC implementation");
+        }
+
+        if (pqcStrict && !useLibOQS) {
+            throw new IllegalStateException("Post-Quantum required in production mode (strict=true)");
         }
 
         // Initialize Dilithium (ML-DSA) key pair

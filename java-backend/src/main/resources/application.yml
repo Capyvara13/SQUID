@@ -19,6 +19,39 @@ logging:
   pattern:
     console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
 
+# Database configuration
+# Default: H2 in-memory (no external DB required to start)
+# Switch to PostgreSQL or MySQL by setting SQUID_DB_TYPE env var.
+spring:
+  datasource:
+    url: ${SQUID_DB_URL:jdbc:h2:mem:squiddb;DB_CLOSE_DELAY=-1}
+    username: ${SQUID_DB_USER:sa}
+    password: ${SQUID_DB_PASS:}
+    driver-class-name: ${SQUID_DB_DRIVER:org.h2.Driver}
+    hikari:
+      maximum-pool-size: ${SQUID_DB_POOL_SIZE:10}
+      minimum-idle: 2
+      connection-timeout: 5000
+      idle-timeout: 300000
+      # TLS 1.3 connection properties (active when SQUID_DB_SSL=true)
+      data-source-properties:
+        ssl: ${SQUID_DB_SSL:false}
+        sslmode: ${SQUID_DB_SSL_MODE:prefer}
+        sslrootcert: ${SQUID_DB_SSL_ROOT_CERT:}
+        # MySQL-specific SSL
+        useSSL: ${SQUID_DB_SSL:false}
+        requireSSL: ${SQUID_DB_SSL:false}
+        verifyServerCertificate: ${SQUID_DB_SSL_VERIFY:false}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
 # SQUID Configuration
 squid:
   security:
@@ -32,6 +65,15 @@ squid:
     python-service-url: ${PYTHON_IA_URL:http://python-ia:5000}
     fallback-enabled: true
     timeout-seconds: 30
+  pqc:
+    strict: false
+  database:
+    type: ${SQUID_DB_TYPE:h2}
+    ssl-enabled: ${SQUID_DB_SSL:false}
+    ssl-mode: ${SQUID_DB_SSL_MODE:prefer}
+  rbac:
+    enabled: ${SQUID_RBAC_ENABLED:false}
+    default-admin-password: ${SQUID_ADMIN_PASS:squid_admin}
 
 # PQC Configuration
 pqc:
