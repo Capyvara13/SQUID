@@ -21,11 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class AiDecisionController {
 
     private final ObjectMapper mapper = new ObjectMapper();
+<<<<<<< HEAD
     private final com.squid.core.service.AIDecisionStateService aiState;
 
     public AiDecisionController(com.squid.core.service.AIDecisionStateService aiState) {
         this.aiState = aiState;
     }
+=======
+>>>>>>> fba0213b8c706e3610af4a9df4b8d765ed2eab80
 
     @PostMapping("/decide")
     public ResponseEntity<JsonNode> decide(@RequestBody JsonNode body) {
@@ -34,6 +37,7 @@ public class AiDecisionController {
             String payloadJson = body.toString();
             String pythonResp = IPCMain.callPythonOnce(payloadJson);
             JsonNode parsed = mapper.readTree(pythonResp);
+<<<<<<< HEAD
             try {
                 java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA-256");
                 byte[] h = md.digest(pythonResp.getBytes(java.nio.charset.StandardCharsets.UTF_8));
@@ -41,6 +45,8 @@ public class AiDecisionController {
                 for (byte b : h) sb.append(String.format("%02x", b));
                 aiState.setLastDecisionHashHex(sb.toString());
             } catch (Exception ignored) {}
+=======
+>>>>>>> fba0213b8c706e3610af4a9df4b8d765ed2eab80
             return ResponseEntity.ok(parsed);
         } catch (Exception e) {
             ObjectNode err = mapper.createObjectNode();
